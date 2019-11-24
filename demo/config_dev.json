@@ -1,0 +1,24 @@
+{
+    "debug": true,
+    "port": 3200,
+    "DBManager": {
+        "ip": "172.27.83.47",
+        "port": 6379,
+        "select": 7,
+        "flag": {
+            "auth_pass": "tryme"
+        }
+    },
+    "mysql": {
+        "connectionLimit": 10,
+        "host": "172.27.83.47",
+        "port": 3306,
+        "user": "root",
+        "password": "tryme",
+        "database": "data_sync"
+    },
+    "platServer": {
+        "0": "https://qiuqiunode.qi1game.com:13005",
+        "1": "http://172.27.83.47:3005"
+    }
+}

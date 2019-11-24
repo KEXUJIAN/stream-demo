@@ -1,0 +1,17 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2017",
+        "outDir": "./bin",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "removeComments": true,
+        "newLine": "LF",
+        "noImplicitAny": false
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

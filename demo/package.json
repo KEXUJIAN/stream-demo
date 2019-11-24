@@ -1,0 +1,34 @@
+{
+    "name": "stream-demo",
+    "description": "",
+    "author": "kexujian",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "scripts": {
+        "dev": "node bin/shell/dev.js",
+        "tags": "node bin/shell/publish.js"
+    },
+    "devDependencies": {
+        "@types/koa": "^2.0.48",
+        "@types/koa-bodyparser": "^4.2.2",
+        "@types/koa-compose": "3.2.2",
+        "@types/koa-router": "^7.0.40",
+        "@types/koa2-cors": "^2.0.1",
+        "@types/node": "^10.0.0",
+        "@types/request": "^2.48.1"
+    },
+    "dependencies": {
+        "get-parameter-names": "^0.3.0",
+        "koa": "^2.5.3",
+        "koa-bodyparser": "^4.2.1",
+        "koa-router": "^7.4.0",
+        "koa2-cors": "^2.0.6",
+        "log4js": "^4.5.0",
+        "moment": "^2.24.0",
+        "reflect-metadata": "^0.1.13",
+        "request": "^2.88.0"
+    },
+    "license": "UNLICENSED"
+}
