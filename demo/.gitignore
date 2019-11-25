@@ -2,3 +2,4 @@ node_modules/
 bin/
 tmp/
 temp/demo2.txt
+temp/largefile.zip

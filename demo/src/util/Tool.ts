@@ -110,10 +110,6 @@ export class Tool {
         return !!((process.env.NODE_ENV || 'dev') === 'dev');
     }
 
-    static getPlatUrl(mode: LoginMode = LoginMode.Online) {
-        return global.platServer[mode] || global.platServer[LoginMode.Online];
-    }
-
     static safeParse(value: string) {
         try {
             return JSON.parse(value);

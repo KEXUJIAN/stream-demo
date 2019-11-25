@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </div>
+    <pre>以下为内容</pre>
     <router-view></router-view>
   </div>
 </template>
