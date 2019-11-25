@@ -30,9 +30,6 @@ class MyReadable extends Readable {
     }
 
     _read() {
-        if (!this.readable) {
-            return;
-        }
         if (this.count === this.upper) {
             Tool.debugLog(`${this.count}: 数据传输完毕`);
             let size = this.size - this.count * SPLIT;

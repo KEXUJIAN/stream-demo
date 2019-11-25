@@ -15,6 +15,31 @@ export class Download extends BaseCtxController {
         return Tool.memUsage();
     }
 
+    @Route.Get()
+    async index() {
+        let file = await fs.promises.open(
+            '/Users/administrator/workspace/code/stream-demo/demo/temp/demo2.txt',
+            'r'
+        );
+        let a = [];
+        let b = [];
+        let start = Date.now()
+        for (let i = 0; i < 100; i++) {
+            fs.read(file.fd, Buffer.alloc(1), 0, 1, null, (e, num, data) => {
+                a[i] = i + " " + data.toString() + " " + (Date.now() - start);
+                b.push(a[i]);
+            });
+        }
+        let timer = setInterval(() => {
+            if (a.length === 100 && a.every(v => typeof v === 'string')) {
+                clearInterval(timer);
+                console.log(a.filter((v, i) => v !== b[i]));
+                file.close();
+            }
+        }, 10);
+        return 'hello';
+    }
+
     /**
      * 通过 stream 下载, 立即返回文件流
      */
