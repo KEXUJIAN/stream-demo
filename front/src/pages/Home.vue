@@ -5,6 +5,8 @@
     <br><br>
     <button @click="waitForStream">通过流下载</button>
     <button @click="timout">超时了</button>
+    <br><br>
+    <button @click="downlad">边下载边观察</button>
   </div>
 </template>
 
@@ -30,6 +32,9 @@ export default {
       } catch (error) {
         console.log('error', error)
       }
+    },
+    downlad() {
+      axios.get(`${url}download/v4`)
     }
   },
 }

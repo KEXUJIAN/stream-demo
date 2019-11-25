@@ -93,7 +93,7 @@ export class Download extends BaseCtxController {
      */
     @Route.ReqMapping(['get', 'post'], 'download/v4')
     async downloadV4() {
-        let size = Math.floor(Math.random() * 1230 + 1500);
+        let size = Math.floor(Math.random() * 12300 + 1500);
         let filename = 'file' + randomBytes(2).toString('hex') + '.txt';
         Tool.debugLog(`filename = ${filename}, size = ${size} B`)
         await Tool.sleep(100);
