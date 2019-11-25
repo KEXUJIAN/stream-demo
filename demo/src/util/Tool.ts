@@ -70,7 +70,7 @@ export class Tool {
 
     static memUsage(msg?: string) {
         let tmp = process.memoryUsage();
-        let memStr = Object.keys(tmp).map(k => `${k} => ${parseFloat((tmp[k] / 1024 / 1024).toPrecision(12))} MB`).join("\n");
+        let memStr = Object.keys(tmp).map(k => `${k} => ${parseFloat((tmp[k] / 1024 / 1024).toPrecision(8))} MB`).join("\n");
         return (msg ? msg + "\n" : "") + memStr;
     }
 
