@@ -74,7 +74,7 @@ export class Download extends BaseCtxController {
      */
     @Route.ReqMapping(['get', 'post'], 'download/v2')
     async downloadV2() {
-        let filename = 'demo.txt';
+        let filename = 'largefile.zip';
         let fileState = await Tool.getTempFileState(filename);
         return new FwFile(fs.createReadStream(fileState.path), filename, fileState.size);
     }

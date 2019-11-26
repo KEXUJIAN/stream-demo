@@ -128,6 +128,19 @@ export class Tool {
             return null;
         }
     }
+
+    static async benchmark(msg:string, fn: Function, count = 10) {
+        // warmup
+        await fn();
+        console.log('=========>', msg, '开始');
+        let start = process.hrtime();
+        for (let i =0;i<count;i++) {
+            await fn();
+        }
+        let end = process.hrtime(start);
+        console.log(fn.name || "fn", `${count} 次`, (end[0] * 1e9 + end[1]) / count, '纳秒每次');
+        console.log('=========>', msg, '结束\n');
+    }
 }
 
 export function stringify(key: any) {
