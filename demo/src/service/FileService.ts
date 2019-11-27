@@ -30,20 +30,18 @@ class MyReadable extends Readable {
     }
 
     _read() {
-        if (this.count === this.upper) {
-            Tool.debugLog(`${this.count}: 数据传输完毕`);
-            let size = this.size - this.count * SPLIT;
-            size && this.push('1'.repeat(size));
-            return this.push(null);
-        }
-        if (this.count === 0) {
-            return this.genData();
-        }
-        // 模拟等待数据传输
-        let time = Math.floor(Math.random() * 1.5 + 1.5) * 1000;
+        let time = Math.floor(Math.random() * 5 + 5.5);
+        console.log(this.count, '等待', time, '秒')
         this.timer = setTimeout(() => {
-            this.genData();
-        }, time);
+            if (this.count === this.upper) {
+                Tool.debugLog(`${this.count}: 数据传输完毕`);
+                let size = this.size - this.count * SPLIT;
+                size && this.push('1'.repeat(size));
+                return this.push(null);
+            }
+            this.push(this.count + " " + randomBytes(SPLIT / 2).toString('hex').slice(0, -3) + "\n");
+            this.count++;
+        }, time * 1000);
     }
 
     genData() {
