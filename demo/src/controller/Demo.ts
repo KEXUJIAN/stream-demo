@@ -96,7 +96,6 @@ export class Download extends BaseCtxController {
         let size = Math.floor(Math.random() * 12300 + 1500);
         let filename = 'file' + randomBytes(2).toString('hex') + '.txt';
         Tool.debugLog(`filename = ${filename}, size = ${size} B`)
-        await Tool.sleep(100);
         return new FwFile(ServHelper.getServ<FileService>(FileService).download(size), filename, size);
     }
 }

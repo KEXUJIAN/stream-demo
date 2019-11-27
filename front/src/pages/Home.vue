@@ -4,7 +4,7 @@
     <button @click="waitForBuffer">等待文件准备就绪</button>
     <br><br>
     <button @click="waitForStream">通过流下载</button>
-    <button @click="timout">超时了</button>
+    <button @click="streamTimeout">流超时了</button>
     <br><br>
     <button @click="downlad">边下载边观察</button>
   </div>
@@ -26,7 +26,7 @@ export default {
     waitForStream() {
       axios.get(`${url}download/v2`)
     },
-    async timout() {
+    async streamTimeout() {
       try {
         await axios.get(`${url}download/v3`, { timeout: 2000 });
       } catch (error) {

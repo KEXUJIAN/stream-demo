@@ -4,17 +4,13 @@ const url = 'http://127.0.0.1:3200/download/v4';
 /** 由于设置了 timeout, 导致 1s 后断开（下载未完成就算超时） */
 function download() {
     console.log('开始下载');
-    let label = "download";
-    console.time(label)
     request.get(url, {
         timeout: 1000
     }, (err, res) => {
         if (err) {
-            console.log('发生错误', err);
-        } else {
-            console.log('下载完毕', res.body);
+            return console.log('发生错误', err);
         }
-        console.timeEnd(label)
+        console.log('下载完毕', res.body);
     });
 }
 
@@ -36,5 +32,5 @@ async function downloadV2() {
     }, timeout)
 }
 
-download();
+// download();
 downloadV2();
